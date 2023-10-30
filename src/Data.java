@@ -4,11 +4,13 @@ public class Data {
     private int dzien;
     private int miesiac;
     private int rok;
+
     public Data(int dzien, int miesiac, int rok){
         this.dzien = dzien;
         this.miesiac = miesiac;
         this.rok = rok;
     }
+
     public int getDzien(){
         return this.dzien;
     }
@@ -22,13 +24,14 @@ public class Data {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (o == null || this.getClass() != o.getClass()) return false;
         Data data = (Data) o;
-        return dzien == data.dzien && miesiac == data.miesiac && rok == data.rok;
+        return this.getDzien() == data.getDzien() && this.getMiesiac() == data.getMiesiac() && this.getRok() == data.getRok();
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(dzien, miesiac, rok);
     }
+
 }

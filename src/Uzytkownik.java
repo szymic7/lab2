@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Uzytkownik {
     private String nazwa;
     private String email;
@@ -7,6 +9,7 @@ public class Uzytkownik {
         this.email = email;
         this.ID = ID;
     }
+
     public String getNazwa(){
         return this.nazwa;
     }
@@ -15,5 +18,23 @@ public class Uzytkownik {
     }
     public int getID(){
         return this.ID;
+    }
+
+    @Override
+    public String toString() {
+        return "Nazwa uzytkownika: " + this.getNazwa() + ", adres email: " + this.getEmail() + ", ID: " + String.format("%03d", this.getID());
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || this.getClass() != o.getClass()) return false;
+        Uzytkownik that = (Uzytkownik) o;
+        return this.ID == that.getID();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(this.ID);
     }
 }
