@@ -4,7 +4,8 @@ public class Uzytkownik {
     private String nazwa;
     private String email;
     private int ID;
-    public Uzytkownik(String nazwa, String email, int ID){
+
+    public Uzytkownik(String nazwa, String email, int ID) {
         this.nazwa = nazwa;
         this.email = email;
         this.ID = ID;
@@ -37,4 +38,5 @@ public class Uzytkownik {
     public int hashCode() {
         return Objects.hash(this.ID);
     }
+
 }

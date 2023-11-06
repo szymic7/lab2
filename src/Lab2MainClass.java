@@ -2,17 +2,18 @@ import java.util.*;
 
 public class Lab2MainClass {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Lab2MainClass obiekt = new Lab2MainClass();
         obiekt.mainLoop();
     }
 
-    public void mainLoop(){
+
+    public void mainLoop() {
 
         int selection;
         Scanner scanner = new Scanner(System.in);
 
-        do{
+        do {
             System.out.println("\n         Wybierz opcje:       ");
             System.out.println("------------------------------");
             System.out.println("1 - zadanie 4 - HashSet i metody equals() oraz hashCode()");
@@ -23,7 +24,7 @@ public class Lab2MainClass {
             System.out.println("\nPodaj numer opcji, ktora chcesz wybrac: ");
             selection = scanner.nextInt();
 
-            switch(selection){
+            switch(selection) {
                 case 1:
                     this.zad4();
                     break;
@@ -41,72 +42,29 @@ public class Lab2MainClass {
                     break;
             }
 
-        }while(selection!=4);
+        } while(selection!=4);
+
     }
 
-    /*
-    public void zad1(){
-        int n;
-        Scanner scanner1 = new Scanner(System.in);
-        System.out.println("Ile liczb typu Double chcesz dodac do kolekcji HashSet i TreeSet? ");
-        n = scanner1.nextInt();
 
-        HashSet<Double> hashSet = new HashSet<Double>();
-        TreeSet<Double> treeSet = new TreeSet<Double>();
-        Double liczba;
-        for(int i = 0; i < n; i++){
-            System.out.println("Podaj " + (i+1) + ". liczbe typu Double: ");
-            liczba = scanner1.nextDouble();
-            hashSet.add(liczba);
-            treeSet.add(liczba);
-        }
-        System.out.println("\nHashSet: " + hashSet);
-        System.out.println("TreeSet: " + treeSet);
-    }
-
-    public void zad5(){
-        Comparator<String> poWieku = new Comparator<>() {
-            @Override
-            public int compare(String i, String j) {
-                Integer x = Integer.parseInt(i.replaceAll("[^0-9]", ""));
-                Integer y = Integer.parseInt(j.replaceAll("[^0-9]", ""));
-                if(x > y)
-                    return 1;
-                else
-                    return -1;
-            }
-        };
-
-        ArrayList<String> osoby = new ArrayList<String>();
-        osoby.add("Jan, 30");
-        osoby.add("Monika, 22");
-        osoby.add("Anna, 45");
-        osoby.add("Wojciech, 18");
-        osoby.sort(poWieku);
-        //Collections.sort(osoby, poWieku);
-        System.out.println("\nLista osob, posortowana wedlug wieku:");
-        for(String osoba: osoby){
-            System.out.println(osoba);
-        }
-    }
-    */
-
-    public void zad4(){
+    public void zad4() {
 
         HashSet<Uzytkownik> uzytkownicy = new HashSet<>();
         uzytkownicy.add(new Uzytkownik("marek13", "marek13@gmail.com", 001));
         uzytkownicy.add(new Uzytkownik("gracz", "gracz@gmail.com", 002));
         uzytkownicy.add(new Uzytkownik("bartek30", "bartek.bartek@wp.pl", 001));
         uzytkownicy.add(new Uzytkownik("maks2000", "maksymilian2000@gmail.com", 003));
+        uzytkownicy.add(new Uzytkownik("tomek99", "tomek.99@yahoo.com", 002));
 
         System.out.println("\nUzytkownicy o unikatowych numerach ID, dodani do HashSetu:");
-        for(Uzytkownik u: uzytkownicy){
+        for(Uzytkownik u: uzytkownicy) {
             System.out.println(u.toString());
         }
 
     }
 
-    public void zad7(){
+
+    public void zad7() {
 
         ArrayList<Produkt> produkty = new ArrayList<>();
         produkty.add(new Produkt("mleko", 3.50));
@@ -117,7 +75,7 @@ public class Lab2MainClass {
 
         Collections.sort(produkty);
         System.out.println("\nProdukty z Listy posortowane za pomocą interfejsu Comparable (po nazwie alfabetycznie): ");
-        for(Produkt p: produkty){
+        for(Produkt p: produkty) {
             System.out.println(p.toString());
         }
 
@@ -135,13 +93,14 @@ public class Lab2MainClass {
 
         Collections.sort(produkty, poCenie);
         System.out.println("\nProdukty z Listy posortowane za pomocą Comparatora (po cenie rosnaco): ");
-        for(Produkt p: produkty){
+        for(Produkt p: produkty) {
             System.out.println(p.toString());
         }
 
     }
 
-    public void zad8(){
+
+    public void zad8() {
 
         HashMap<Data, String> mapaDaty = new HashMap<>();
         mapaDaty.put(new Data(12, 4, 2000), "12 kwietnia 2000 r.");
