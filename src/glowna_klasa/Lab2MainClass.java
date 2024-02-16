@@ -1,11 +1,12 @@
+package glowna_klasa;
+
+import klasy_porownywanych_obiektow.Data;
+import klasy_porownywanych_obiektow.Produkt;
+import klasy_porownywanych_obiektow.Uzytkownik;
+
 import java.util.*;
 
 public class Lab2MainClass {
-
-    public static void main(String[] args) {
-        Lab2MainClass obiekt = new Lab2MainClass();
-        obiekt.mainLoop();
-    }
 
 
     public void mainLoop() {
@@ -114,6 +115,12 @@ public class Lab2MainClass {
         System.out.println(mapaDaty.get(new Data(5, 8, 1996)));
         System.out.println(mapaDaty.get(new Data(17, 10, 2023)));
 
+    }
+
+
+    public static void main(String[] args) {
+        Lab2MainClass obiekt = new Lab2MainClass();
+        obiekt.mainLoop();
     }
 
 }

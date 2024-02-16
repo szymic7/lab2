@@ -1,3 +1,5 @@
+package klasy_porownywanych_obiektow;
+
 public class Produkt implements Comparable<Produkt> {
     private String nazwa;
     private double cena;

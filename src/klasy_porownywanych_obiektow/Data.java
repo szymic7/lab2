@@ -1,3 +1,5 @@
+package klasy_porownywanych_obiektow;
+
 import java.util.Objects;
 
 public class Data {
